@@ -25,7 +25,7 @@ var siteFunc = require("./models/db/siteFunc");
 var fs = require('fs');
 //时间格式化
 var moment = require('moment');
-var fliter = require('./util/filter');
+var filter = require('./util/filter');
 
 //模板引擎
 var partials = require('express-partials');
