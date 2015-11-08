@@ -1,5 +1,8 @@
+
+/*引用模块*/
 var express = require('express');
 var session = require('express-session');
+var mongoose = require('mongoose');
 var RedisStore = require('connect-redis')(session);
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,9 +10,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compression = require('compression');
-
 var routes = require('./routes/index');
-
+debugger;
 var users = require('./routes/users');
 var admin = require('./routes/admin');
 var content = require('./routes/content');
