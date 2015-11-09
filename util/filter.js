@@ -23,7 +23,7 @@ exports.authUser = function(req, res, next) {
 		return next();
 	}
 
-	if(req.seesion.user) {
+	if(req.session.user) {
 		req.session.logined = true;
 		return next();
 	} else {

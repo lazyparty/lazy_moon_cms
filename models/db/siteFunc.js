@@ -23,7 +23,16 @@ function isLogined(req) {
 }
 
 var siteFunc = {
-
-
+	
+		setDataForError: function( req, res, title, errInfo) {
+		return {
+			siteConfig: 'aa',
+			cateTypes: 'aaa',
+			errInfo: errInfo,
+			pageType: 'error',
+			logined: 'aaa',
+			layout: 'web/public/defaultTemp'
+		}
+	}
 };
 module.exports = siteFunc;
