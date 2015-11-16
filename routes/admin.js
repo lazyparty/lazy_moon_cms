@@ -21,7 +21,7 @@ router.get('/vnum', function(req, res) {
 	pngword.createReadStream(word).pipe(res);
 });
 
-router.post('/doLogin', function(res, req, next){
+router.post('/doLogin', function(req, res, next){
 	var username = req.body.username;
 	var password = req.body.password;
 	var vnum = req.body.vnum;
