@@ -15,7 +15,13 @@ var db = mongoose.connect('mongodb://localhost/lazycms');
 //信息删除操作
 
 var DbOpt = {
-
+	encrypt: function(data, key) {
+		var cipher = crypto.createCipher("bf", key);
+		var newPsd = "";
+		newPsd += cipher.update(data, 'utf8', 'hex');
+		newPsd += cipher.final('hex');
+		return newPsd;
+	}
 
 };
 

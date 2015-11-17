@@ -5,6 +5,14 @@ var validator = require('validator');
 
 var settings = require('../models/db/settings');
 
+var adminFunc = require("../models/db/adminFunc");
+
+var AdminGroup = require("../models/AdminGroup");
+var AdminUser = require("../models/AdminUser");
+var DbOpt = require("../models/Dbopt");
+var SystemOptionLog = require("../models/SystemOptionLog");
+
+
 var PW = require('png-word');
 var RW = require('../util/randomWord');
 var rw = RW('abcdefghijklmnopqrstuvwxyz1234567890');
@@ -56,7 +64,7 @@ router.post('/doLogin', function(req, res, next){
 					console.log("登陆失败");
 					res.end("用户名或密码错误");
 				}
-			})
+			});
 		} else {
 			res.end(setting.system_illegal_param)
 		}
