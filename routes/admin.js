@@ -41,7 +41,7 @@ router.post('/doLogin', function(req, res, next){
 			AdminUser.findOne({username:username, password:newPsd}, function(err, user){
 				if(user) {
 					//缓存权限
-					AdminGroup.find({_id: user.group}, function(err, result){
+					AdminGroup.findOne({_id: user.group}, function(err, result){
 						if(err) {
 							console.log(err);
 						} else {
@@ -70,4 +70,9 @@ router.post('/doLogin', function(req, res, next){
 		}
 	}
 });
+
+router.get('/manager', function(req, res, next) {
+	res.render('manager/main', adminFunc.setPageInfo(req, res, settings.SYSTEMMANAGE));
+}
+
 module.exports = router;
